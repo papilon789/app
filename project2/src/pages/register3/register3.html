@@ -1,0 +1,162 @@
+<!--
+  Generated template for the Register3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register3</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+    <ion-list>
+        <form novalidate (ngSubmit)="signup()" [formGroup]="signupform">
+          <ion-item>
+            <ion-label floating>ชื่อ: </ion-label>
+            <ion-input type="text" [(ngModel)]="name" formControlName="name" [class.error1]="!signupform.controls.name.valid && signupform.controls.name.dirty" ></ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="( signupform.get('name').hasError('minlength') || signupform.get('name').hasError('maxlength') ||signupform.get('name').hasError('pattern') ||signupform.get('name').hasError('required') ) && signupform.get('name').touched">
+            <div class="error" *ngIf="signupform.get('name').hasError('required') && signupform.get('name').touched">
+              กรุณาใส่ชื่อ
+            </div>
+            <div class="error" *ngIf="signupform.get('name').hasError('minlength') && signupform.get('name').touched">
+              Minimum 4 characters
+            </div>
+            <div class="error" *ngIf="signupform.get('name').hasError('maxlength') && signupform.get('name').touched">
+              Maximum 30 characters
+            </div>
+            <div class="error" *ngIf="signupform.get('name').hasError('pattern') && signupform.get('name').touched">
+              กรุณาใส่อักษร
+            </div>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>นามสกุล: </ion-label>
+              <ion-input type="text" [(ngModel)]="surname" formControlName="surname" [class.error1]="!signupform.controls.surname.valid && signupform.controls.surname.dirty" ></ion-input>
+            </ion-item>
+            <ion-item no-lines *ngIf="( signupform.get('surname').hasError('minlength') || signupform.get('surname').hasError('maxlength') ||signupform.get('surname').hasError('pattern') ||signupform.get('surname').hasError('required') ) && signupform.get('surname').touched">
+              <div class="error" *ngIf="signupform.get('surname').hasError('required') && signupform.get('surname').touched">
+                กรุณาใส่นามสกุล
+              </div>
+              <div class="error" *ngIf="signupform.get('surname').hasError('minlength') && signupform.get('surname').touched">
+                Minimum 4 characters
+              </div>
+              <div class="error" *ngIf="signupform.get('surname').hasError('maxlength') && signupform.get('surname').touched">
+                Maximum 30 characters
+              </div>
+              <div class="error" *ngIf="signupform.get('surname').hasError('pattern') && signupform.get('surname').touched">
+                  กรุณาใส่อักษร
+              </div>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>ชื่อเล่น: </ion-label>
+                <ion-input type="text" [(ngModel)]="nickname" formControlName="nickname" [class.error1]="!signupform.controls.nickname.valid && signupform.controls.nickname.dirty" ></ion-input>
+              </ion-item>
+              <ion-item no-lines *ngIf="( signupform.get('nickname').hasError('minlength') || signupform.get('nickname').hasError('maxlength') ||signupform.get('nickname').hasError('pattern') ||signupform.get('nickname').hasError('required') ) && signupform.get('nickname').touched">
+                <div class="error" *ngIf="signupform.get('nickname').hasError('required') && signupform.get('nickname').touched">
+                  กรุณาใส่นามสกุล
+                </div>
+                <div class="error" *ngIf="signupform.get('nickname').hasError('minlength') && signupform.get('nickname').touched">
+                  Minimum 1 characters
+                </div>
+                <div class="error" *ngIf="signupform.get('nickname').hasError('maxlength') && signupform.get('nickname').touched">
+                  Maximum 30 characters
+                </div>
+                <div class="error" *ngIf="signupform.get('nickname').hasError('pattern') && signupform.get('nickname').touched">
+                    กรุณาใส่อักษร
+                </div>
+              </ion-item>
+
+            <ion-item>
+                <ion-label floating>เบอร์โทรศัพท์: </ion-label>
+                <ion-input type="tel" [(ngModel)]="tel" formControlName="tel" [class.error1]="!signupform.controls.tel.valid && signupform.controls.tel.dirty" ></ion-input>
+              </ion-item>
+              <ion-item no-lines *ngIf="( signupform.get('tel').hasError('minlength') || signupform.get('tel').hasError('maxlength') ||signupform.get('tel').hasError('pattern') ||signupform.get('tel').hasError('required') ) && signupform.get('tel').touched">
+                <div class="error" *ngIf="signupform.get('tel').hasError('required') && signupform.get('tel').touched">
+                  กรุณาใส่เบอร์โทรศัพท์
+                </div>
+                <div class="error" *ngIf="signupform.get('tel').hasError('minlength') && signupform.get('tel').touched">
+                  Minimum 10 characters
+                </div>
+                <div class="error" *ngIf="signupform.get('tel').hasError('maxlength') && signupform.get('tel').touched">
+                  Maximum 10 characters
+                </div>
+                <div class="error" *ngIf="signupform.get('tel').hasError('pattern') && signupform.get('tel').touched">
+                    กรุณาใส่เฉพาะตัวเลข
+                </div>
+              </ion-item>
+    
+          <ion-item>
+            <ion-label floating>Email: </ion-label>
+            <ion-input type="text" [(ngModel)]="email" formControlName="email" [class.error1]="!signupform.controls.email.valid && signupform.controls.email.dirty"></ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="( signupform.get('email').hasError('minlength') || signupform.get('email').hasError('pattern') ||signupform.get('email').hasError('required') ) && signupform.get('email').touched">
+            <div class="error" *ngIf="signupform.get('email').hasError('required') && signupform.get('email').touched">
+              Please input your email
+            </div>
+            <div class="error" *ngIf="signupform.get('email').hasError('pattern') && signupform.get('email').touched">
+              Email address invalid
+            </div>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>ID Line: </ion-label>
+              <ion-input type="text" [(ngModel)]="line" formControlName="line" [class.error1]="!signupform.controls.line.valid && signupform.controls.line.dirty" ></ion-input>
+            </ion-item>
+            <ion-item no-lines *ngIf="(signupform.get('line').hasError('required') ) && signupform.get('line').touched">
+              <div class="error" *ngIf="signupform.get('line').hasError('required') && signupform.get('line').touched">
+                กรุณาใส่เบอร์โทรศัพท์
+              </div>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>ความถนัด: </ion-label>
+                <!-- <ion-input type="text" [(ngModel)]="userData.aptitude" formControlName="aptitude" [class.error1]="!signupform.controls.aptitude.valid && signupform.controls.aptitude.dirty" ></ion-input> -->
+                <ion-select  interface="action-sheet" [(ngModel)]="aptitude" formControlName="aptitude" [class.error1]="!signupform.controls.aptitude.valid && signupform.controls.aptitude.dirty" >
+                  <ion-option value="งานช่าง">งานช่าง</ion-option>
+                  <ion-option value="งานสวน">งานสวน</ion-option>
+                  <ion-option value="งานบ้าน">งานบ้าน</ion-option>
+                  <ion-option value="ขายสินค้า">ขายสินค้า</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item no-lines *ngIf="(signupform.get('aptitude').hasError('required') ) && signupform.get('aptitude').touched">
+                <div class="error" *ngIf="signupform.get('aptitude').hasError('required') && signupform.get('aptitude').touched">
+                  กรุณาใส่ความถนัด
+                </div>
+              </ion-item>
+      
+    
+          
+          <ion-item>
+            <ion-label floating>Password: </ion-label>
+            <ion-input type="password" [(ngModel)]="password" formControlName="password" [class.error1]="!signupform.controls.password.valid && signupform.controls.password.dirty"></ion-input>
+          </ion-item>
+    
+          <ion-item no-lines *ngIf="( signupform.get('password').hasError('minlength') || signupform.get('password').hasError('maxlength') ||signupform.get('password').hasError('required') ) && signupform.get('password').touched">
+            <div class="error" *ngIf="signupform.get('password').hasError('required') && signupform.get('password').touched">
+              Please input your password
+            </div>
+            <div class="error" *ngIf="signupform.get('password').hasError('minlength') && signupform.get('password').touched">
+              Minimum 6 characters
+            </div>
+            <div class="error" *ngIf="signupform.get('password').hasError('maxlength') && signupform.get('password').touched">
+              Maximum 12 characters
+            </div>
+          </ion-item>
+        </form>
+          <ion-item>
+            <button ion-button block color="primary" (click)="registerUser()" [disabled]="!name || !surname || !tel || !email || !line || !aptitude || !password">
+            SIGNUP
+            </button><!-- signupform.invalid -->
+          </ion-item>
+      </ion-list>
+
+</ion-content>
+

@@ -1,0 +1,91 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-list>
+
+
+  <ion-item>
+    <ion-label >ชื่อ:</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >นามสกุล:</ion-label>
+     <ion-input type="text" [(ngModel)]="surname" required icon="user4"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label >ชื่อเล่น:</ion-label>
+       <ion-input type="text" [(ngModel)]="nickname" required icon="user4"></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-label >เบอร์โทรศัพท์:</ion-label>
+    <ion-input type="tel" placeholder="ตัวอย่าง 099999999" [(ngModel)]="tel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >E-mai:</ion-label>
+     <ion-input type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >ID Line:</ion-label>
+    <ion-input type="text" [(ngModel)]="line"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >ความถนัด:</ion-label>
+     <ion-select  interface="action-sheet" [(ngModel)]="aptitude">
+        <ion-option value="Technician">งานช่าง</ion-option>
+        <ion-option value="Gardener">งานสวน</ion-option>
+        <ion-option value="Maid">งานบ้าน</ion-option>
+        <ion-option value="Trader">ขายสินค้า</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>รหัสผ่าน:</ion-label>
+      <ion-input type="password" placeholder="สำหรับเข้าใช้" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>ยืนยันรหัสผ่าน:</ion-label>
+      <ion-input type="password" placeholder="สำหรับเข้าใช้" [(ngModel)]="password2"></ion-input>
+  </ion-item>
+
+
+
+</ion-list>
+
+<div padding>
+
+  <button ion-button block (click)="registerUser()">
+
+    <ion-icon name="basket"></ion-icon>  
+    สมัครสมาชิก
+ 
+   </button>
+
+</div>
+ 
+
+
+
+
+
+</ion-content>

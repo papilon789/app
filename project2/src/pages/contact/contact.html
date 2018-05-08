@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-item >
+    <ion-input [(ngModel)]="inputtext" placeholder="type"></ion-input>
+    
+  </ion-item>
+
+ <button ion-button (click)="saveData()">save</button>
+ <button ion-button (click)="loadData()">load</button>
+ <button ion-button (click)="clearData()">clear</button> -->
+ 
+ 
+
+  <ion-card *ngFor="let info of detail">
+
+    <ion-card-header>
+     สวัสดี คุณ{{info.nickname}}
+    </ion-card-header>
+
+    <ion-card-content>
+      ชื่อ: {{info.name}}  {{info.surname}}<br>
+      เบอร์โทรศัพท์: {{info.tel}}<br>
+      email: {{info.email}}<br>
+      line: {{info.line}}<br>
+      ความถนัด: {{info.aptitude}}
+    </ion-card-content>
+
+  </ion-card>
+  
+  <button block ion-button (click)="doRegister()">แก้ไขข้อมูล</button>
+
+</ion-content>
