@@ -31,31 +31,31 @@ export class ContactProvider {
     return this.http.get(url, httpOptions);
   }
 
-  updatedata(
-    id: string,
-    name: string, 
-    surname: string, 
-    nickname: string, 
-    tel: string, 
-    email: string,
-    line: string,
-    aptitude: string,
-    password: string
-  ){
-    let url = 'http://localhost:3000/member/update?id=' + id;
-    return this.http.put(url, {
+  // updatedata(
+  //   id: string,
+  //   name: string, 
+  //   surname: string, 
+  //   nickname: string, 
+  //   tel: string, 
+  //   email: string,
+  //   line: string,
+  //   aptitude: string,
+  //   password: string
+  // ){
+  //   let url = 'http://localhost:3000/member/update?id=' + id;
+  //   return this.http.put(url, {
 
-      name: name,
-      surname: surname, 
-      nickname: nickname, 
-      tel: tel,
-      email: email,
-      line: line,
-      aptitude: aptitude,
-      password: password
-    });
+  //     name: name,
+  //     surname: surname, 
+  //     nickname: nickname, 
+  //     tel: tel,
+  //     email: email,
+  //     line: line,
+  //     aptitude: aptitude,
+  //     password: password
+  //   });
 
-  }
+  // }
 
 
 }

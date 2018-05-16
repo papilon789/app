@@ -17,6 +17,7 @@ export class PostproductProvider {
 
 
   dopostproduct(
+    iduser: string,
     productname: string,
     category: string,
     price: string,
@@ -28,6 +29,7 @@ export class PostproductProvider {
     let url = 'http://localhost:3000/product';
     return this.http.post(url, {
 
+      iduser: iduser,
       productname: productname,
       category: category,
       price: price,
@@ -36,6 +38,23 @@ export class PostproductProvider {
       email: email,
       line: line
     });
+  }
+
+  detailtrader(category: string){
+
+    let token = sessionStorage.getItem('token');
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    let url = 'http://localhost:3000/product/detail/trader?category=' + category;
+    return this.http.get(url, httpOptions);
+
+
   }
 
 

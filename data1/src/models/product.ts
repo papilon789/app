@@ -26,9 +26,9 @@ export class ProductModel {
       .update(data);
   }
 
-  detail(knex: Knex, id: string) {
+  detail(knex: Knex, category: string) {
     return knex(this.tableName)
-      .where(this.primaryKey, id);
+      .where(category);
   }
 
   // detail(db: Knex, id: string){

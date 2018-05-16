@@ -23,6 +23,7 @@ export class PostproductPage implements OnInit {
   [x: string]: any;
   Postproductform: FormGroup;
 
+  iduser = sessionStorage.getItem('id');
   productname: string = null;
   category: string = null;
   price: string = null;
@@ -60,6 +61,7 @@ export class PostproductPage implements OnInit {
   Postproduct(){
     console.log.name;
   this.postproductProvider.dopostproduct(
+    this.iduser,
     this.productname, 
     this.category, 
     this.price, 

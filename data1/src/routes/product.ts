@@ -10,7 +10,7 @@ const router = express.Router();
 
 const model = new ProductModel();
 
-router.get('/member', (req, res, next) => {
+router.get('/product', (req, res, next) => {
 
     let db = req.db;
   
@@ -25,7 +25,7 @@ router.get('/member', (req, res, next) => {
   
   router.post('/product', (req, res, next) => {
 
-
+    let iduser = req.body.iduser;
     let productname = req.body.productname;
     let category = req.body.category;
     let price = req.body.price;
@@ -39,6 +39,7 @@ router.get('/member', (req, res, next) => {
   
       model.save(db, {
             
+            iduser: iduser,
             productname: productname,
             category: category,
             price: price,
@@ -102,13 +103,13 @@ router.get('/member', (req, res, next) => {
     }
   });
   
-  router.get('/member/detail', (req, res, next) => {
+  router.get('/product/detail/trader', (req, res, next) => {
     
     // let id = sessionStorage.getItem('id');
-    let id = req.query.id
+    let category = req.query.category
     let db = req.db;
   
-    model.detail(db, id)
+    model.detail(db, category)
       .then(results => {
         res.send({ ok: true, data: results });
       })

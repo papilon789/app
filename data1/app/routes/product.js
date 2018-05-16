@@ -5,7 +5,7 @@ const product_1 = require("../models/product");
 const crypto = require("crypto");
 const router = express.Router();
 const model = new product_1.ProductModel();
-router.get('/member', (req, res, next) => {
+router.get('/product', (req, res, next) => {
     let db = req.db;
     model.list(db)
         .then((results) => {
@@ -16,6 +16,7 @@ router.get('/member', (req, res, next) => {
     });
 });
 router.post('/product', (req, res, next) => {
+    let iduser = req.body.iduser;
     let productname = req.body.productname;
     let category = req.body.category;
     let price = req.body.price;
@@ -25,6 +26,7 @@ router.post('/product', (req, res, next) => {
     let line = req.body.line;
     let db = req.db;
     model.save(db, {
+        iduser: iduser,
         productname: productname,
         category: category,
         price: price,
@@ -74,10 +76,10 @@ router.put('/member/update', (req, res, next) => {
         res.send({ ok: false, error: 'ข้อมูลไม่สมบูรณ์' });
     }
 });
-router.get('/member/detail', (req, res, next) => {
-    let id = req.query.id;
+router.get('/product/detail/trader', (req, res, next) => {
+    let category = req.query.category;
     let db = req.db;
-    model.detail(db, id)
+    model.detail(db, category)
         .then(results => {
         res.send({ ok: true, data: results });
     })

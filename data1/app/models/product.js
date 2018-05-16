@@ -19,9 +19,9 @@ class ProductModel {
             .where(this.primaryKey, id)
             .update(data);
     }
-    detail(knex, id) {
+    detail(knex, category) {
         return knex(this.tableName)
-            .where(this.primaryKey, id);
+            .where(category);
     }
     remove(knex, id) {
         return knex(this.tableName)
