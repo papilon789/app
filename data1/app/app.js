@@ -12,6 +12,7 @@ const cors = require("cors");
 const jwt_1 = require("./models/jwt");
 const login_1 = require("./routes/login");
 const member_1 = require("./routes/member");
+const product_1 = require("./routes/product");
 const jwt = new jwt_1.Jwt();
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
@@ -75,6 +76,7 @@ app.use((req, res, next) => {
 });
 app.use('/', login_1.default);
 app.use('/', member_1.default);
+app.use('/', product_1.default);
 app.use((req, res, next) => {
     var err = new Error('Not Found');
     err['status'] = 404;

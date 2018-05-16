@@ -35,7 +35,10 @@ export class EditproPage {
   }
 
   updatepro(){
-    // this.contactProvider.updatedata(this.id.toString())
+    let id = this.id
+
+    // this.contactProvider.updatedata(id.toString())
+    
     
   }
 

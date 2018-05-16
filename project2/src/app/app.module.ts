@@ -37,6 +37,9 @@ import { Register3Page } from '../pages/register3/register3';
 import { ContactProvider } from '../providers/member/member';
 import { EditproPageModule } from '../pages/editpro/editpro.module';
 import { EditproPage } from '../pages/editpro/editpro';
+import { PostproductPageModule } from '../pages/postproduct/postproduct.module';
+import { PostproductPage } from '../pages/postproduct/postproduct';
+import { PostproductProvider } from '../providers/postproduct/postproduct';
 
 
 
@@ -64,7 +67,8 @@ import { EditproPage } from '../pages/editpro/editpro';
     MaidListPageModule,
     TraderListPageModule,
     Register3PageModule,
-    EditproPageModule
+    EditproPageModule,
+    PostproductPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +85,8 @@ import { EditproPage } from '../pages/editpro/editpro';
     MaidListPage,
     TraderListPage,
     Register3Page,
-    EditproPage
+    EditproPage,
+    PostproductPage
   ],
   providers: [
     StatusBar,
@@ -89,7 +94,8 @@ import { EditproPage } from '../pages/editpro/editpro';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     RegisterProvider,
-    ContactProvider
+    ContactProvider,
+    PostproductProvider
   ]
 })
 export class AppModule {}

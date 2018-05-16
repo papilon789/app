@@ -2,7 +2,6 @@ import { Component, Query } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ContactProvider } from '../../providers/member/member';
 import * as _ from 'lodash';
-import { Storage } from '@ionic/storage';
 import { EditproPage } from '../editpro/editpro';
 
 
@@ -13,17 +12,13 @@ import { EditproPage } from '../editpro/editpro';
 })
 export class ContactPage {
 
-
-  // inputtext: string;
-  // key: string = 'username';
   id = sessionStorage.getItem('id');
   detail: any =[];
   
 
   constructor(public navCtrl: NavController,
     private contactProvider: ContactProvider,
-    private loadingCtrl: LoadingController,
-    private storage: Storage
+    private loadingCtrl: LoadingController
   ) {
     // this.getData();
   }

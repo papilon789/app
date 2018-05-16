@@ -22,7 +22,7 @@ export class Register3Page implements OnInit {
   [x: string]: any;
   signupform: FormGroup;
   
-  // userData = {"name":"", "surname":"", "nickname":"", "tel":"", "email":"", "line":"", "aptitude":"", "password":""};
+  
   name: string = null;
   surname: string = null;
   nickname: string = null;
@@ -80,6 +80,7 @@ export class Register3Page implements OnInit {
         buttons: ['yes'] 
       });
       alert.present();
+      this.navCtrl.push(LoginPage);
     }else{
       let alert = this.alertCtrl.create({
         title: 'ลงทะเบียน',

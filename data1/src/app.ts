@@ -16,6 +16,7 @@ import * as cors from 'cors';
 import { Jwt } from './models/jwt';
 import index from './routes/login';
 import member from './routes/member';
+import product from './routes/product';
 
 
 
@@ -96,6 +97,7 @@ app.use((req, res, next) => {
 
 app.use('/',index);
 app.use('/',member);
+app.use('/',product)
 
 //catch 404 and forward to error handler
 app.use((req,res,next) => {
